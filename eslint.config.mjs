@@ -58,7 +58,7 @@ export default [
     },
   },
   {
-    files: ["**/*.{js,mjs,cjs}"],
+    files: ["**/*.{js,mjs,cjs}", "vitest.config.ts"],
     ...ts.configs.disableTypeChecked,
   },
 ];
