@@ -53,6 +53,9 @@ importers:
       eslint-plugin-unicorn:
         specifier: ^55.0.0
         version: 55.0.0(eslint@9.8.0)
+      eslint-plugin-vitest:
+        specifier: ^0.5.4
+        version: 0.5.4(eslint@9.8.0)(typescript@5.5.4)(vitest@2.0.4(@types/node@20.14.13))
       husky:
         specifier: ^9.1.3
         version: 9.1.3
@@ -872,6 +875,19 @@ packages:
     engines: {node: '>=18.18'}
     peerDependencies:
       eslint: '>=8.56.0'
+
+  eslint-plugin-vitest@0.5.4:
+    resolution: {integrity: sha512-um+odCkccAHU53WdKAw39MY61+1x990uXjSPguUCq3VcEHdqJrOb8OTMrbYlY6f9jAKx7x98kLVlIe3RJeJqoQ==}
+    engines: {node: ^18.0.0 || >= 20.0.0}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': '*'
+      eslint: ^8.57.0 || ^9.0.0
+      vitest: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+      vitest:
+        optional: true
 
   eslint-scope@8.0.2:
     resolution: {integrity: sha512-6E4xmrTw5wtxnLA5wYL3WDfhZ/1bUBGOXV0zQvVRDOtrR8D0p6W7fs3JweNYhwRYeGvd/1CKX2se0/2s7Q/nJA==}
@@ -2579,6 +2595,16 @@ snapshots:
       regjsparser: 0.10.0
       semver: 7.6.3
       strip-indent: 3.0.0
+
+  eslint-plugin-vitest@0.5.4(eslint@9.8.0)(typescript@5.5.4)(vitest@2.0.4(@types/node@20.14.13)):
+    dependencies:
+      '@typescript-eslint/utils': 7.17.0(eslint@9.8.0)(typescript@5.5.4)
+      eslint: 9.8.0
+    optionalDependencies:
+      vitest: 2.0.4(@types/node@20.14.13)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   eslint-scope@8.0.2:
     dependencies:

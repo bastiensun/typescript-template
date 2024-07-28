@@ -7,6 +7,7 @@ import regexp from "eslint-plugin-regexp";
 import security from "eslint-plugin-security";
 import sonarjs from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
+import vitest from "eslint-plugin-vitest";
 import ts from "typescript-eslint";
 
 export default [
@@ -31,6 +32,7 @@ export default [
   security.configs.recommended,
   sonarjs.configs.recommended,
   unicorn.configs["flat/recommended"],
+  vitest.configs.recommended,
   /* eslint-enable */
   {
     rules: {
