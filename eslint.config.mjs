@@ -1,5 +1,8 @@
 import js from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
+import gitignore from "eslint-config-flat-gitignore";
+import * as depend from "eslint-plugin-depend";
+import markdown from "eslint-plugin-markdown";
 import node from "eslint-plugin-n";
 import perfectionist from "eslint-plugin-perfectionist";
 import promise from "eslint-plugin-promise";
@@ -11,6 +14,7 @@ import vitest from "eslint-plugin-vitest";
 import ts from "typescript-eslint";
 
 export default [
+  gitignore(),
   { files: ["**/*.{js,mjs,cjs,ts}"] },
   js.configs.recommended,
   ...ts.configs.strictTypeChecked,
@@ -25,6 +29,8 @@ export default [
   },
   /* eslint-disable sonarjs/no-duplicate-string */
   comments.recommended,
+  depend.configs["flat/recommended"],
+  ...markdown.configs.recommended,
   node.configs["flat/recommended-module"],
   perfectionist.configs["recommended-natural"],
   promise.configs["flat/recommended"],
