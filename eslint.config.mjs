@@ -3,7 +3,7 @@ import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import node from "eslint-plugin-n";
 import perfectionist from "eslint-plugin-perfectionist";
 import promise from "eslint-plugin-promise";
-import regexp from "eslint-plugin-regexp";
+import * as regexp from "eslint-plugin-regexp";
 import security from "eslint-plugin-security";
 import sonarjs from "eslint-plugin-sonarjs";
 import unicorn from "eslint-plugin-unicorn";
