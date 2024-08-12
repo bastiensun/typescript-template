@@ -48,6 +48,7 @@ export default [
     rules: {
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/explicit-function-return-type": "error",
+      "@typescript-eslint/method-signature-style": "error", // cf. https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
       "@typescript-eslint/naming-convention": [
         "error",
         {
@@ -57,16 +58,32 @@ export default [
           types: ["boolean"],
         },
       ],
+      "@typescript-eslint/no-magic-numbers": [
+        "error",
+        {
+          ignore: [-1, 0, 1, 2], // cf. https://en.wikipedia.org/wiki/Magic_number_(programming)#Accepted_uses
+        },
+      ],
       "@typescript-eslint/strict-boolean-expressions": "error",
       "@typescript-eslint/switch-exhaustiveness-check": "error",
       "arrow-body-style": "error",
+      eqeqeq: "error",
+      "guard-for-in": "error", // cf. https://www.executeprogram.com/courses/modern-javascript/lessons/for-of-loops
       "n/no-missing-import": [
         "error",
         {
           tryExtensions: [".js", ".json", ".node", ".ts"],
         },
       ],
+      "no-restricted-syntax": [
+        "error",
+        {
+          message: "Use const assertion or a string union type instead.",
+          selector: "TSEnumDeclaration", // cf. https://www.typescriptlang.org/docs/handbook/enums.html#objects-vs-enums, https://www.typescriptlang.org/docs/handbook/enums.html#const-enum-pitfalls
+        },
+      ],
       "prefer-arrow-callback": "error",
+      "vitest/prefer-strict-equal": "error",
     },
   },
   {
