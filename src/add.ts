@@ -2,6 +2,7 @@ export function add(...arguments_: number[]): number {
   return arguments_.reduce((a, b) => a + b, 0);
 }
 
+// Stryker disable all
 if (import.meta.vitest) {
   const { expect, it } = import.meta.vitest;
 
