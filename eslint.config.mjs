@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import gitignore from "eslint-config-flat-gitignore";
 import * as depend from "eslint-plugin-depend";
+import jsdoc from "eslint-plugin-jsdoc";
 import markdown from "eslint-plugin-markdown";
 import node from "eslint-plugin-n";
 import perfectionist from "eslint-plugin-perfectionist";
@@ -30,6 +31,9 @@ export default [
   /* eslint-disable sonarjs/no-duplicate-string */
   comments.recommended,
   depend.configs["flat/recommended"],
+  jsdoc.configs["flat/logical-typescript"],
+  jsdoc.configs["flat/stylistic-typescript"],
+  jsdoc.configs["flat/contents-typescript"],
   ...markdown.configs.recommended,
   node.configs["flat/recommended-module"],
   perfectionist.configs["recommended-natural"],
