@@ -45,6 +45,9 @@ export default [
   vitest.configs.recommended,
   /* eslint-enable */
   {
+    plugins: {
+      node,
+    },
     rules: {
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/explicit-function-return-type": "error",
@@ -64,17 +67,21 @@ export default [
           ignore: [-1, 0, 1, 2], // cf. https://en.wikipedia.org/wiki/Magic_number_(programming)#Accepted_uses
         },
       ],
+      "@typescript-eslint/promise-function-async": "error", // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#14-typescript-eslint-promise-function-async
       "@typescript-eslint/strict-boolean-expressions": "error",
       "@typescript-eslint/switch-exhaustiveness-check": "error",
       "arrow-body-style": "error",
       eqeqeq: "error",
       "guard-for-in": "error", // cf. https://www.executeprogram.com/courses/modern-javascript/lessons/for-of-loops
+      "max-nested-callbacks": ["error", 2], // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#5-max-nested-callbacks
       "n/no-missing-import": [
         "error",
         {
           tryExtensions: [".js", ".json", ".node", ".ts"],
         },
       ],
+      "no-await-in-loop": "error", // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#2-no-await-in-loop
+      "no-promise-executor-return": "error", // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#3-no-promise-executor-return
       "no-restricted-syntax": [
         "error",
         {
@@ -82,7 +89,12 @@ export default [
           selector: "TSEnumDeclaration", // cf. https://www.typescriptlang.org/docs/handbook/enums.html#objects-vs-enums, https://www.typescriptlang.org/docs/handbook/enums.html#const-enum-pitfalls
         },
       ],
+      "node/handle-callback-err": ["error", "^.*(e|E)rr"], // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#8-node-handle-callback-err
+      "node/no-callback-literal": "error", // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#9-node-no-callback-literal
+      "node/no-sync": "error", // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#10-node-no-sync
       "prefer-arrow-callback": "error",
+      "prefer-promise-reject-errors": "error", // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#7-prefer-promise-reject-errors
+      "require-atomic-updates": "error", // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#4-require-atomic-updates
       "vitest/prefer-strict-equal": "error",
     },
   },
