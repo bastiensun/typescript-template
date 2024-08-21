@@ -85,8 +85,17 @@ export default [
       "no-restricted-syntax": [
         "error",
         {
+          // cf. https://www.typescriptlang.org/docs/handbook/enums.html#objects-vs-enums
+          // cf. https://www.typescriptlang.org/docs/handbook/enums.html#const-enum-pitfalls
           message: "Use const assertion or a string union type instead.",
-          selector: "TSEnumDeclaration", // cf. https://www.typescriptlang.org/docs/handbook/enums.html#objects-vs-enums, https://www.typescriptlang.org/docs/handbook/enums.html#const-enum-pitfalls
+          selector: "TSEnumDeclaration",
+        },
+        {
+          // cf. https://effectivetypescript.com/2020/03/09/evolving-any
+          // cf. https://stackoverflow.com/questions/77150939/triggering-typescript-error-for-untyped-arrays/77804988#77804988
+          message: "Don't use evolving any arrays.",
+          selector:
+            "VariableDeclarator:matches([id.typeAnnotation=undefined]):matches([init.type=ArrayExpression]):matches([init.elements.length=0])",
         },
       ],
       "node/handle-callback-err": ["error", "^.*(e|E)rr"], // cf. https://maximorlov.com/linting-rules-for-asynchronous-code-in-javascript/#8-node-handle-callback-err
