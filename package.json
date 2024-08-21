@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "format": "prettier --list-different .",
     "lint": "eslint --max-warnings 0 .",
