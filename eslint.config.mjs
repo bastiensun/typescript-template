@@ -1,18 +1,18 @@
-import js from "@eslint/js";
-import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
-import gitignore from "eslint-config-flat-gitignore";
-import * as depend from "eslint-plugin-depend";
-import jsdoc from "eslint-plugin-jsdoc";
-import markdown from "eslint-plugin-markdown";
-import node from "eslint-plugin-n";
-import perfectionist from "eslint-plugin-perfectionist";
-import promise from "eslint-plugin-promise";
-import * as regexp from "eslint-plugin-regexp";
-import security from "eslint-plugin-security";
-import sonarjs from "eslint-plugin-sonarjs";
-import unicorn from "eslint-plugin-unicorn";
-import vitest from "eslint-plugin-vitest";
-import ts from "typescript-eslint";
+import js from "@eslint/js"
+import comments from "@eslint-community/eslint-plugin-eslint-comments/configs"
+import gitignore from "eslint-config-flat-gitignore"
+import * as depend from "eslint-plugin-depend"
+import jsdoc from "eslint-plugin-jsdoc"
+import markdown from "eslint-plugin-markdown"
+import node from "eslint-plugin-n"
+import perfectionist from "eslint-plugin-perfectionist"
+import promise from "eslint-plugin-promise"
+import * as regexp from "eslint-plugin-regexp"
+import security from "eslint-plugin-security"
+import sonarjs from "eslint-plugin-sonarjs"
+import unicorn from "eslint-plugin-unicorn"
+import vitest from "eslint-plugin-vitest"
+import ts from "typescript-eslint"
 
 export default [
   gitignore(),
@@ -102,4 +102,4 @@ export default [
     files: ["**/*.{js,mjs,cjs}", "vitest.config.ts"],
     ...ts.configs.disableTypeChecked,
   },
-];
+]
